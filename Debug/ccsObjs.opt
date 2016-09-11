@@ -1,0 +1,1 @@
+"./snakelib.obj" "./snake_interrupts.obj" "./snake_images.obj" "./snake_events.obj" "./snake.obj" "./pthreadsISR.obj" "./pthreads.obj" "./RBX430_lcd.obj" "./RBX430_i2c.obj" "./RBX430-1.obj" "../lnk_msp430f2274.cmd" -l"libc.a" 

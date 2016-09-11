@@ -1,0 +1,922 @@
+******************************************************************************
+                  MSP430 Linker PC v4.2.1                      
+******************************************************************************
+>> Linked Wed Apr 06 14:23:15 2016
+
+OUTPUT FILE NAME:   <scott_crossen_224_lab_10.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000b258
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  SFR                   00000000   00000010  00000000  00000010  RWIX
+  PERIPHERALS_8BIT      00000010   000000f0  00000000  000000f0  RWIX
+  PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
+  RAM                   00000200   00000400  00000400  00000000  RWIX
+  INFOD                 00001000   00000040  00000000  00000040  RWIX
+  INFOC                 00001040   00000040  00000000  00000040  RWIX
+  INFOB                 00001080   00000040  00000000  00000040  RWIX
+  INFOA                 000010c0   00000040  00000000  00000040  RWIX
+  FLASH                 00008000   00007fde  00005446  00002b98  RWIX
+  INT00                 0000ffe0   00000002  00000000  00000002  RWIX
+  INT01                 0000ffe2   00000002  00000000  00000002  RWIX
+  INT02                 0000ffe4   00000002  00000002  00000000  RWIX
+  INT03                 0000ffe6   00000002  00000002  00000000  RWIX
+  INT04                 0000ffe8   00000002  00000000  00000002  RWIX
+  INT05                 0000ffea   00000002  00000002  00000000  RWIX
+  INT06                 0000ffec   00000002  00000002  00000000  RWIX
+  INT07                 0000ffee   00000002  00000002  00000000  RWIX
+  INT08                 0000fff0   00000002  00000002  00000000  RWIX
+  INT09                 0000fff2   00000002  00000002  00000000  RWIX
+  INT10                 0000fff4   00000002  00000002  00000000  RWIX
+  INT11                 0000fff6   00000002  00000000  00000002  RWIX
+  INT12                 0000fff8   00000002  00000002  00000000  RWIX
+  INT13                 0000fffa   00000002  00000002  00000000  RWIX
+  INT14                 0000fffc   00000002  00000002  00000000  RWIX
+  RESET                 0000fffe   00000002  00000002  00000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.pinit     0    00008000    00000000     UNINITIALIZED
+
+.data      0    00000200    00000000     UNINITIALIZED
+
+.sysmem    0    00000200    000001d0     UNINITIALIZED
+                  00000200    00000004     rts430.lib : memory.obj (.sysmem)
+                  00000204    000001cc     --HOLE--
+
+.bss       0    000003d0    000001b0     UNINITIALIZED
+                  000003d0    0000012a     snake_events.obj (.bss)
+                  000004fa    00000022     pthreads.obj (.bss)
+                  0000051c    00000022     snake.obj (.bss)
+                  0000053e    00000018     RBX430_i2c.obj (.bss)
+                  00000556    0000000e     snake_interrupts.obj (.bss)
+                  00000564    00000008     rts430.lib : memory.obj (.bss)
+                  0000056c    00000006     RBX430_lcd.obj (.bss)
+                  00000572    00000004     rts430.lib : _lock.obj (.bss)
+                  00000576    00000004                : boot.obj (.bss)
+                  0000057a    00000004                : rand.obj (.bss)
+                  0000057e    00000002     RBX430-1.obj (.bss)
+
+.stack     0    00000580    00000080     UNINITIALIZED
+                  00000580    00000002     rts430.lib : boot.obj (.stack)
+                  00000582    0000007e     --HOLE--
+
+.text      0    00008000    0000355e     
+                  00008000    0000031a     snake_events.obj (.text:MOVE_SNAKE_event)
+                  0000831a    000002b8     snake_events.obj (.text:LCD_UPDATE_event)
+                  000085d2    000002ae     snake_events.obj (.text:START_LEVEL_event)
+                  00008880    00000246     RBX430_lcd.obj (.text:lcd_point)
+                  00008ac6    00000244     RBX430_lcd.obj (.text:my_printfi)
+                  00008d0a    00000214     snake_events.obj (.text:NEXT_LEVEL_event)
+                  00008f1e    0000020e     snake_events.obj (.text:END_GAME_event)
+                  0000912c    000001ce     snake_events.obj (.text:create_bonus)
+                  000092fa    000001b4     snake_events.obj (.text:create_food)
+                  000094ae    00000194     snake_events.obj (.text:NEW_GAME_event)
+                  00009642    0000018e     snakelib.obj (.text:add_head)
+                  000097d0    0000018a     snake.obj (.text:main)
+                  0000995a    00000186     RBX430_lcd.obj (.text:lcd_init)
+                  00009ae0    00000178     RBX430-1.obj (.text:ERROR2)
+                  00009c58    0000015a     RBX430_lcd.obj (.text:lcd_circle)
+                  00009db2    00000132     RBX430_lcd.obj (.text:lcd_putchar)
+                  00009ee4    0000010a     snake_events.obj (.text:draw_food)
+                  00009fee    000000d4     RBX430_lcd.obj (.text:lcd_wordImage)
+                  0000a0c2    000000d0     snake_interrupts.obj (.text:WDT_ISR)
+                  0000a192    000000c0     RBX430-1.obj (.text:RBX430_init)
+                  0000a252    000000a8     RBX430_lcd.obj (.text:lcd_star)
+                  0000a2fa    000000a8     rts430.lib : memory.obj (.text:malloc)
+                  0000a3a2    000000a6     snake_events.obj (.text:SWITCH_4_event)
+                  0000a448    000000a6     pthreads.obj (.text:pthread_create)
+                  0000a4ee    00000094     RBX430_lcd.obj (.text:lcd_diamond)
+                  0000a582    00000088     RBX430_lcd.obj (.text:lcd_rectangle)
+                  0000a60a    00000088     pthreadsISR.obj (.text)
+                  0000a692    00000080     rts430.lib : memory.obj (.text:free)
+                  0000a712    0000007e     RBX430_lcd.obj (.text:lcd_triangle)
+                  0000a790    0000007a     pthreads.obj (.text:pthread_init)
+                  0000a80a    00000070     pthreads.obj (.text:pthread_mutex_unlock)
+                  0000a87a    00000064     snake_events.obj (.text:SWITCH_1_event)
+                  0000a8de    00000060     pthreads.obj (.text:pthread_exit)
+                  0000a93e    0000005e     RBX430_i2c.obj (.text:i2c_read)
+                  0000a99c    0000005e     RBX430_lcd.obj (.text:lcd_WD)
+                  0000a9fa    00000058     rts430.lib : setjmp.obj (.text)
+                  0000aa52    0000004c     RBX430_i2c.obj (.text:i2c_start_address)
+                  0000aa9e    0000004c     rts430.lib : lsr16.obj (.text)
+                  0000aaea    0000004a     snakelib.obj (.text:delete_tail)
+                  0000ab34    0000004a     RBX430_lcd.obj (.text:lcd_WD2)
+                  0000ab7e    0000004a     pthreads.obj (.text:pthread_mutex_lock)
+                  0000abc8    0000004a     pthreads.obj (.text:sem_signal)
+                  0000ac12    00000048     rts430.lib : autoinit.obj (.text:_auto_init)
+                  0000ac5a    00000048     RBX430_i2c.obj (.text:i2c_out8bits)
+                  0000aca2    00000046     RBX430_lcd.obj (.text:DelayMs)
+                  0000ace8    00000046     snake_events.obj (.text:SWITCH_3_event)
+                  0000ad2e    00000044     snake_events.obj (.text:SWITCH_2_event)
+                  0000ad72    00000042     RBX430_i2c.obj (.text:FRAM_read)
+                  0000adb4    00000040     RBX430_i2c.obj (.text:FRAM_write)
+                  0000adf4    00000040     snakelib.obj (.text:outTone)
+                  0000ae34    00000040     pthreads.obj (.text:sem_wait)
+                  0000ae74    0000003e     snakelib.obj (.text:new_snake)
+                  0000aeb2    00000038     RBX430_lcd.obj (.text:ReadDataWord)
+                  0000aeea    00000038     rts430.lib : memory.obj (.text:minit)
+                  0000af22    00000038                : rand.obj (.text:rand)
+                  0000af5a    00000036     RBX430_i2c.obj (.text:FRAM_init)
+                  0000af90    00000036     RBX430_i2c.obj (.text:i2c_write)
+                  0000afc6    00000034     RBX430_lcd.obj (.text:WriteDataWord)
+                  0000affa    00000034     RBX430_lcd.obj (.text:lcd_set_x_y)
+                  0000b02e    00000032     snake_events.obj (.text:draw_rock)
+                  0000b060    00000030     snakelib.obj (.text:doDitty)
+                  0000b090    00000030     snake_events.obj (.text:draw_bonus)
+                  0000b0c0    00000030     snake_events.obj (.text:draw_hole)
+                  0000b0f0    00000030     RBX430_i2c.obj (.text:i2c_out_stop)
+                  0000b120    00000030     RBX430_lcd.obj (.text:lcd_cursor)
+                  0000b150    0000002e     RBX430_lcd.obj (.text:lcd_set)
+                  0000b17e    0000002e     snake_interrupts.obj (.text:port1_init)
+                  0000b1ac    0000002c     RBX430-1.obj (.text:ISR_trap)
+                  0000b1d8    0000002c     rts430.lib : div16s.obj (.text)
+                  0000b204    0000002c                : lsl16.obj (.text)
+                  0000b230    00000028     pthreads.obj (.text:pthread_mutex_init)
+                  0000b258    00000026     rts430.lib : boot.obj (.text:_c_int00_noexit)
+                  0000b27e    00000026                : mult32.obj (.text)
+                  0000b2a4    00000024     RBX430_i2c.obj (.text:i2c_clockhigh)
+                  0000b2c8    00000024     RBX430_i2c.obj (.text:i2c_clocklow)
+                  0000b2ec    00000024     RBX430_lcd.obj (.text:lcd_printf)
+                  0000b310    00000024     snake_interrupts.obj (.text:watchdog_init)
+                  0000b334    00000022     pthreads.obj (.text:semaphore_create)
+                  0000b356    00000020     RBX430_lcd.obj (.text:ReadData)
+                  0000b376    00000020     RBX430_lcd.obj (.text:lcd_square)
+                  0000b396    0000001e     RBX430_lcd.obj (.text:WriteCmd)
+                  0000b3b4    0000001e     RBX430_lcd.obj (.text:WriteData)
+                  0000b3d2    0000001c     pthreads.obj (.text:sem_trywait)
+                  0000b3ee    0000001a     snakelib.obj (.text:timerB_init)
+                  0000b408    00000018     RBX430_i2c.obj (.text:i2c_out_bit)
+                  0000b420    00000018     pthreads.obj (.text:init_stack)
+                  0000b438    00000016     snake_interrupts.obj (.text:Port_1_ISR)
+                  0000b44e    00000016     rts430.lib : div16u.obj (.text)
+                  0000b464    00000014     snakelib.obj (.text:beep)
+                  0000b478    00000014     RBX430_lcd.obj (.text:lcd_backlight)
+                  0000b48c    00000014     rts430.lib : memset.obj (.text:memset)
+                  0000b4a0    00000014                : mult16.obj (.text)
+                  0000b4b4    00000014     pthreads.obj (.text:timerA_init)
+                  0000b4c8    00000012     rts430.lib : lsr32.obj (.text:l_lsr)
+                  0000b4da    00000012                : memcpy.obj (.text:memcpy)
+                  0000b4ec    00000010                : epilog.obj (.text)
+                  0000b4fc    0000000e     snakelib.obj (.text:charge)
+                  0000b50a    0000000e     snakelib.obj (.text:imperial_march)
+                  0000b518    0000000e     rts430.lib : strlen.obj (.text:strlen)
+                  0000b526    0000000c     snakelib.obj (.text:rasberry)
+                  0000b532    0000000a     RBX430_lcd.obj (.text:lcd_clear)
+                  0000b53c    00000008     RBX430-1.obj (.text:ADC10_ISR)
+                  0000b544    00000008     snakelib.obj (.text:blink)
+                  0000b54c    00000008     pthreads.obj (.text:pthread_yield)
+                  0000b554    00000004     rts430.lib : pre_init.obj (.text:_system_pre_init)
+                  0000b558    00000004                : exit.obj (.text:abort)
+                  0000b55c    00000002                : _lock.obj (.text:_nop)
+
+.const     0    0000b55e    00001ed8     
+                  0000b55e    00000f28     snake_images.obj (.const:king_snake_image)
+                  0000c486    00000682     snake_images.obj (.const:snake1_image)
+                  0000cb08    0000049e     snake_images.obj (.const:snake_text_image)
+                  0000cfa6    000001e0     RBX430_lcd.obj (.const:cs)
+                  0000d186    00000118     snakelib.obj (.const:imperial_march_notes)
+                  0000d29e    000000a2     RBX430_lcd.obj (.const:.string:dv3)
+                  0000d340    00000082     snake_events.obj (.const:.string)
+                  0000d3c2    0000002c     RBX430_lcd.obj (.const:dv$3)
+                  0000d3ee    00000018     snakelib.obj (.const:Charge)
+                  0000d406    00000011     RBX430_lcd.obj (.const:.string:lHexChar$1)
+                  0000d417    00000001     --HOLE-- [fill = 0]
+                  0000d418    00000011     RBX430_lcd.obj (.const:.string:uHexChar$2)
+                  0000d429    00000001     --HOLE-- [fill = 0]
+                  0000d42a    00000006     RBX430_lcd.obj (.const:px_off)
+                  0000d430    00000006     RBX430_lcd.obj (.const:px_on)
+
+.cinit     0    0000d436    00000010     
+                  0000d436    00000008     rts430.lib : rand.obj (.cinit)
+                  0000d43e    00000006                : memory.obj (.cinit)
+                  0000d444    00000002     --HOLE-- [fill = 0]
+
+PORT1      0    0000ffe4    00000002     
+                  0000ffe4    00000002     snake_interrupts.obj (.int02)
+
+PORT2      0    0000ffe6    00000002     
+                  0000ffe6    00000002     rts430.lib : int03.obj (.int03)
+
+ADC10      0    0000ffea    00000002     
+                  0000ffea    00000002     RBX430-1.obj (.int05)
+
+USCIAB0TX 
+*          0    0000ffec    00000002     
+                  0000ffec    00000002     rts430.lib : int06.obj (.int06)
+
+USCIAB0RX 
+*          0    0000ffee    00000002     
+                  0000ffee    00000002     rts430.lib : int07.obj (.int07)
+
+TIMERA1    0    0000fff0    00000002     
+                  0000fff0    00000002     pthreadsISR.obj (.int08)
+
+TIMERA0    0    0000fff2    00000002     
+                  0000fff2    00000002     rts430.lib : int09.obj (.int09)
+
+WDT        0    0000fff4    00000002     
+                  0000fff4    00000002     snake_interrupts.obj (.int10)
+
+TIMERB1    0    0000fff8    00000002     
+                  0000fff8    00000002     rts430.lib : int12.obj (.int12)
+
+TIMERB0    0    0000fffa    00000002     
+                  0000fffa    00000002     rts430.lib : int13.obj (.int13)
+
+NMI        0    0000fffc    00000002     
+                  0000fffc    00000002     rts430.lib : int14.obj (.int14)
+
+.reset     0    0000fffe    00000002     
+                  0000fffe    00000002     rts430.lib : boot.obj (.reset)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+000003d0   .bss
+00000200   .data
+00008000   .text
+0000004a   ADC10AE0
+0000004b   ADC10AE1
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+0000b53c   ADC10_ISR
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000053   BCSCTL3
+0000b558   C$$EXIT
+000010fb   CALBC1_12MHZ
+000010f9   CALBC1_16MHZ
+000010ff   CALBC1_1MHZ
+000010fd   CALBC1_8MHZ
+000010fa   CALDCO_12MHZ
+000010f8   CALDCO_16MHZ
+000010fe   CALDCO_1MHZ
+000010fc   CALDCO_8MHZ
+0000d3ee   Charge
+00000056   DCOCTL
+00008f1e   END_GAME_event
+00009ae0   ERROR2
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+00000552   FRAM_adr
+00000554   FRAM_data
+0000af5a   FRAM_init
+00000555   FRAM_mask
+0000ad72   FRAM_read
+0000adb4   FRAM_write
+00000000   IE1
+00000001   IE2
+00000002   IFG1
+00000003   IFG2
+0000b1ac   ISR_trap
+0000b204   I_LSL
+0000b22c   I_LSL_1
+0000b21a   I_LSL_10
+0000b218   I_LSL_11
+0000b216   I_LSL_12
+0000b214   I_LSL_13
+0000b212   I_LSL_14
+0000b210   I_LSL_15
+0000b22a   I_LSL_2
+0000b228   I_LSL_3
+0000b226   I_LSL_4
+0000b224   I_LSL_5
+0000b222   I_LSL_6
+0000b220   I_LSL_7
+0000b21e   I_LSL_8
+0000b21c   I_LSL_9
+0000aa9e   I_LSR
+0000aae4   I_LSR_1
+0000aac0   I_LSR_10
+0000aabc   I_LSR_11
+0000aab8   I_LSR_12
+0000aab4   I_LSR_13
+0000aab0   I_LSR_14
+0000aaac   I_LSR_15
+0000aae0   I_LSR_2
+0000aadc   I_LSR_3
+0000aad8   I_LSR_4
+0000aad4   I_LSR_5
+0000aad0   I_LSR_6
+0000aacc   I_LSR_7
+0000aac8   I_LSR_8
+0000aac4   I_LSR_9
+0000831a   LCD_UPDATE_event
+00000536   LCD_mutex
+0000052e   LCD_update
+0000b4c8   L_LSR
+00008000   MOVE_SNAKE_event
+000094ae   NEW_GAME_event
+00008d0a   NEXT_LEVEL_event
+000000c0   OA0CTL0
+000000c1   OA0CTL1
+000000c2   OA1CTL0
+000000c3   OA1CTL1
+00000022   P1DIR
+00000025   P1IE
+00000024   P1IES
+00000023   P1IFG
+00000020   P1IN
+00000021   P1OUT
+00000027   P1REN
+00000026   P1SEL
+0000002a   P2DIR
+0000002d   P2IE
+0000002c   P2IES
+0000002b   P2IFG
+00000028   P2IN
+00000029   P2OUT
+0000002f   P2REN
+0000002e   P2SEL
+0000001a   P3DIR
+00000018   P3IN
+00000019   P3OUT
+00000010   P3REN
+0000001b   P3SEL
+0000001e   P4DIR
+0000001c   P4IN
+0000001d   P4OUT
+00000011   P4REN
+0000001f   P4SEL
+0000b438   Port_1_ISR
+0000a192   RBX430_init
+000085d2   START_LEVEL_event
+0000a87a   SWITCH_1_event
+0000ad2e   SWITCH_2_event
+0000ace8   SWITCH_3_event
+0000a3a2   SWITCH_4_event
+00000172   TACCR0
+00000174   TACCR1
+00000176   TACCR2
+00000162   TACCTL0
+00000164   TACCTL1
+00000166   TACCTL2
+00000160   TACTL
+0000012e   TAIV
+00000170   TAR
+0000a60a   TA_isr
+00000562   TB0_tone_on
+00000192   TBCCR0
+00000194   TBCCR1
+00000196   TBCCR2
+00000182   TBCCTL0
+00000184   TBCCTL1
+00000186   TBCCTL2
+00000180   TBCTL
+0000011e   TBIV
+00000190   TBR
+0000005d   UCA0ABCTL
+00000062   UCA0BR0
+00000063   UCA0BR1
+00000060   UCA0CTL0
+00000061   UCA0CTL1
+0000005f   UCA0IRRCTL
+0000005e   UCA0IRTCTL
+00000064   UCA0MCTL
+00000066   UCA0RXBUF
+00000065   UCA0STAT
+00000067   UCA0TXBUF
+0000006a   UCB0BR0
+0000006b   UCB0BR1
+00000068   UCB0CTL0
+00000069   UCB0CTL1
+0000006c   UCB0I2CIE
+00000118   UCB0I2COA
+0000011a   UCB0I2CSA
+0000006e   UCB0RXBUF
+0000006d   UCB0STAT
+0000006f   UCB0TXBUF
+00000120   WDTCTL
+0000a0c2   WDT_ISR
+00000556   WDT_cps_cnt
+0000055a   WDT_debounce_cnt
+0000055e   WDT_delay
+0000051e   WDT_move
+00000558   WDT_move_cnt
+00000526   WDT_move_exit
+00000600   __STACK_END
+00000080   __STACK_SIZE
+000001d0   __SYSMEM_SIZE
+0000b1ac   __TI_ISR_TRAP
+00000001   __TI_args_main
+00000001   __TI_auto_init
+00000576   __TI_cleanup_ptr
+00000578   __TI_dtors_ptr
+00000001   __TI_exit
+0000ffe4   __TI_int02
+0000ffe6   __TI_int03
+0000ffea   __TI_int05
+0000ffec   __TI_int06
+0000ffee   __TI_int07
+0000fff0   __TI_int08
+0000fff2   __TI_int09
+0000fff4   __TI_int10
+0000fff8   __TI_int12
+0000fffa   __TI_int13
+0000fffc   __TI_int14
+ffffffff   __binit__
+000003d0   __bss__
+ffffffff   __c_args__
+0000d436   __cinit__
+00000200   __data__
+0000b1d8   __divi
+0000b44e   __divu
+00000200   __edata__
+00000580   __end__
+0000b55e   __etext__
+0000b4a0   __mpyi
+0000b27e   __mpyl
+ffffffff   __pinit__
+0000b1d8   __remi
+0000b44e   __remu
+00008000   __text__
+0000ac12   _auto_init
+0000b258   _c_int00
+0000b258   _c_int00_noexit
+00000572   _lock
+0000b55c   _nop
+0000fffe   _reset_vector
+0000a9fa   _setjmp
+00000580   _stack
+00000200   _sys_memory
+0000b554   _system_pre_init
+00000574   _unlock
+0000b558   abort
+00009642   add_head
+0000055c   backlight_cnt
+0000b464   beep
+ffffffff   binit
+0000b544   blink
+000004f6   bonus
+000003e2   bonus_count
+0000b4fc   charge
+0000d436   cinit
+0000912c   create_bonus
+000092fa   create_food
+0000cfa6   cs
+0000051a   ctid
+0000aaea   delete_tail
+000003ed   direction
+0000b060   doDitty
+0000b090   draw_bonus
+00009ee4   draw_food
+0000b0c0   draw_hole
+0000b02e   draw_rock
+0000d29e   dv3
+00000200   edata
+00000580   end
+0000b55e   etext
+000003e4   food_amount
+000003dc   food_count
+000004f0   foods
+0000a692   free
+0000b4f8   func_epilog_1
+0000b4f6   func_epilog_2
+0000b4f4   func_epilog_3
+0000b4f2   func_epilog_4
+0000b4f0   func_epilog_5
+0000b4ee   func_epilog_6
+0000b4ec   func_epilog_7
+000003d0   game_mode
+000003ee   head
+000003e0   hole_count
+000004f4   holes
+0000b2a4   i2c_clockhigh
+0000b2c8   i2c_clocklow
+0000053e   i2c_context
+00000550   i2c_delay
+0000057e   i2c_fSCL
+0000ac5a   i2c_out8bits
+0000b408   i2c_out_bit
+0000b0f0   i2c_out_stop
+0000a93e   i2c_read
+0000aa52   i2c_start_address
+0000af90   i2c_write
+0000b50a   imperial_march
+0000d186   imperial_march_notes
+0000b420   init_stack
+000004f8   initials
+0000b55e   king_snake_image
+0000a99c   lcd_WD
+0000ab34   lcd_WD2
+0000b478   lcd_backlight
+00009c58   lcd_circle
+0000b532   lcd_clear
+0000b120   lcd_cursor
+0000a4ee   lcd_diamond
+0000995a   lcd_init
+00008880   lcd_point
+0000b2ec   lcd_printf
+00009db2   lcd_putchar
+0000a582   lcd_rectangle
+0000b150   lcd_set
+0000affa   lcd_set_x_y
+0000b376   lcd_square
+0000a252   lcd_star
+0000a712   lcd_triangle
+00009fee   lcd_wordImage
+000003ec   level
+0000aa26   longjmp
+000097d0   main
+0000a2fa   malloc
+0000b4da   memcpy
+0000b48c   memset
+0000aeea   minit
+000003ea   move_cid
+000003e8   move_cnt
+0000ae74   new_snake
+0000adf4   outTone
+000003d2   overall_score
+ffffffff   pinit
+0000b17e   port1_init
+0000a448   pthread_create
+0000a8de   pthread_exit
+0000a790   pthread_init
+0000b230   pthread_mutex_init
+0000ab7e   pthread_mutex_lock
+0000a80a   pthread_mutex_unlock
+0000b54c   pthread_yield
+0000d42a   px_off
+0000d430   px_on
+0000af22   rand
+0000b526   rasberry
+000003de   rock_count
+000004f2   rocks
+000003d4   score
+000003d6   seconds
+0000abc8   sem_signal
+0000b3d2   sem_trywait
+0000ae34   sem_wait
+0000b334   semaphore_create
+0000a9fa   setjmp
+000003f0   snake
+0000c486   snake1_image
+000003da   snake_length
+0000cb08   snake_text_image
+000003e6   start_count
+0000b518   strlen
+0000051c   sys_event
+000003ef   tail
+000004fa   tcbs
+000003d8   time_limit
+0000b4b4   timerA_init
+0000b3ee   timerB_init
+0000b310   watchdog_init
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   IE1
+00000001   IE2
+00000001   __TI_args_main
+00000001   __TI_auto_init
+00000001   __TI_exit
+00000002   IFG1
+00000003   IFG2
+00000010   P3REN
+00000011   P4REN
+00000018   P3IN
+00000019   P3OUT
+0000001a   P3DIR
+0000001b   P3SEL
+0000001c   P4IN
+0000001d   P4OUT
+0000001e   P4DIR
+0000001f   P4SEL
+00000020   P1IN
+00000021   P1OUT
+00000022   P1DIR
+00000023   P1IFG
+00000024   P1IES
+00000025   P1IE
+00000026   P1SEL
+00000027   P1REN
+00000028   P2IN
+00000029   P2OUT
+0000002a   P2DIR
+0000002b   P2IFG
+0000002c   P2IES
+0000002d   P2IE
+0000002e   P2SEL
+0000002f   P2REN
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+0000004a   ADC10AE0
+0000004b   ADC10AE1
+00000053   BCSCTL3
+00000056   DCOCTL
+00000057   BCSCTL1
+00000058   BCSCTL2
+0000005d   UCA0ABCTL
+0000005e   UCA0IRTCTL
+0000005f   UCA0IRRCTL
+00000060   UCA0CTL0
+00000061   UCA0CTL1
+00000062   UCA0BR0
+00000063   UCA0BR1
+00000064   UCA0MCTL
+00000065   UCA0STAT
+00000066   UCA0RXBUF
+00000067   UCA0TXBUF
+00000068   UCB0CTL0
+00000069   UCB0CTL1
+0000006a   UCB0BR0
+0000006b   UCB0BR1
+0000006c   UCB0I2CIE
+0000006d   UCB0STAT
+0000006e   UCB0RXBUF
+0000006f   UCB0TXBUF
+00000080   __STACK_SIZE
+000000c0   OA0CTL0
+000000c1   OA0CTL1
+000000c2   OA1CTL0
+000000c3   OA1CTL1
+00000118   UCB0I2COA
+0000011a   UCB0I2CSA
+0000011e   TBIV
+00000120   WDTCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000012e   TAIV
+00000160   TACTL
+00000162   TACCTL0
+00000164   TACCTL1
+00000166   TACCTL2
+00000170   TAR
+00000172   TACCR0
+00000174   TACCR1
+00000176   TACCR2
+00000180   TBCTL
+00000182   TBCCTL0
+00000184   TBCCTL1
+00000186   TBCCTL2
+00000190   TBR
+00000192   TBCCR0
+00000194   TBCCR1
+00000196   TBCCR2
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+000001d0   __SYSMEM_SIZE
+00000200   .data
+00000200   __data__
+00000200   __edata__
+00000200   _sys_memory
+00000200   edata
+000003d0   .bss
+000003d0   __bss__
+000003d0   game_mode
+000003d2   overall_score
+000003d4   score
+000003d6   seconds
+000003d8   time_limit
+000003da   snake_length
+000003dc   food_count
+000003de   rock_count
+000003e0   hole_count
+000003e2   bonus_count
+000003e4   food_amount
+000003e6   start_count
+000003e8   move_cnt
+000003ea   move_cid
+000003ec   level
+000003ed   direction
+000003ee   head
+000003ef   tail
+000003f0   snake
+000004f0   foods
+000004f2   rocks
+000004f4   holes
+000004f6   bonus
+000004f8   initials
+000004fa   tcbs
+0000051a   ctid
+0000051c   sys_event
+0000051e   WDT_move
+00000526   WDT_move_exit
+0000052e   LCD_update
+00000536   LCD_mutex
+0000053e   i2c_context
+00000550   i2c_delay
+00000552   FRAM_adr
+00000554   FRAM_data
+00000555   FRAM_mask
+00000556   WDT_cps_cnt
+00000558   WDT_move_cnt
+0000055a   WDT_debounce_cnt
+0000055c   backlight_cnt
+0000055e   WDT_delay
+00000562   TB0_tone_on
+00000572   _lock
+00000574   _unlock
+00000576   __TI_cleanup_ptr
+00000578   __TI_dtors_ptr
+0000057e   i2c_fSCL
+00000580   __end__
+00000580   _stack
+00000580   end
+00000600   __STACK_END
+000010f8   CALDCO_16MHZ
+000010f9   CALBC1_16MHZ
+000010fa   CALDCO_12MHZ
+000010fb   CALBC1_12MHZ
+000010fc   CALDCO_8MHZ
+000010fd   CALBC1_8MHZ
+000010fe   CALDCO_1MHZ
+000010ff   CALBC1_1MHZ
+00008000   .text
+00008000   MOVE_SNAKE_event
+00008000   __text__
+0000831a   LCD_UPDATE_event
+000085d2   START_LEVEL_event
+00008880   lcd_point
+00008d0a   NEXT_LEVEL_event
+00008f1e   END_GAME_event
+0000912c   create_bonus
+000092fa   create_food
+000094ae   NEW_GAME_event
+00009642   add_head
+000097d0   main
+0000995a   lcd_init
+00009ae0   ERROR2
+00009c58   lcd_circle
+00009db2   lcd_putchar
+00009ee4   draw_food
+00009fee   lcd_wordImage
+0000a0c2   WDT_ISR
+0000a192   RBX430_init
+0000a252   lcd_star
+0000a2fa   malloc
+0000a3a2   SWITCH_4_event
+0000a448   pthread_create
+0000a4ee   lcd_diamond
+0000a582   lcd_rectangle
+0000a60a   TA_isr
+0000a692   free
+0000a712   lcd_triangle
+0000a790   pthread_init
+0000a80a   pthread_mutex_unlock
+0000a87a   SWITCH_1_event
+0000a8de   pthread_exit
+0000a93e   i2c_read
+0000a99c   lcd_WD
+0000a9fa   _setjmp
+0000a9fa   setjmp
+0000aa26   longjmp
+0000aa52   i2c_start_address
+0000aa9e   I_LSR
+0000aaac   I_LSR_15
+0000aab0   I_LSR_14
+0000aab4   I_LSR_13
+0000aab8   I_LSR_12
+0000aabc   I_LSR_11
+0000aac0   I_LSR_10
+0000aac4   I_LSR_9
+0000aac8   I_LSR_8
+0000aacc   I_LSR_7
+0000aad0   I_LSR_6
+0000aad4   I_LSR_5
+0000aad8   I_LSR_4
+0000aadc   I_LSR_3
+0000aae0   I_LSR_2
+0000aae4   I_LSR_1
+0000aaea   delete_tail
+0000ab34   lcd_WD2
+0000ab7e   pthread_mutex_lock
+0000abc8   sem_signal
+0000ac12   _auto_init
+0000ac5a   i2c_out8bits
+0000ace8   SWITCH_3_event
+0000ad2e   SWITCH_2_event
+0000ad72   FRAM_read
+0000adb4   FRAM_write
+0000adf4   outTone
+0000ae34   sem_wait
+0000ae74   new_snake
+0000aeea   minit
+0000af22   rand
+0000af5a   FRAM_init
+0000af90   i2c_write
+0000affa   lcd_set_x_y
+0000b02e   draw_rock
+0000b060   doDitty
+0000b090   draw_bonus
+0000b0c0   draw_hole
+0000b0f0   i2c_out_stop
+0000b120   lcd_cursor
+0000b150   lcd_set
+0000b17e   port1_init
+0000b1ac   ISR_trap
+0000b1ac   __TI_ISR_TRAP
+0000b1d8   __divi
+0000b1d8   __remi
+0000b204   I_LSL
+0000b210   I_LSL_15
+0000b212   I_LSL_14
+0000b214   I_LSL_13
+0000b216   I_LSL_12
+0000b218   I_LSL_11
+0000b21a   I_LSL_10
+0000b21c   I_LSL_9
+0000b21e   I_LSL_8
+0000b220   I_LSL_7
+0000b222   I_LSL_6
+0000b224   I_LSL_5
+0000b226   I_LSL_4
+0000b228   I_LSL_3
+0000b22a   I_LSL_2
+0000b22c   I_LSL_1
+0000b230   pthread_mutex_init
+0000b258   _c_int00
+0000b258   _c_int00_noexit
+0000b27e   __mpyl
+0000b2a4   i2c_clockhigh
+0000b2c8   i2c_clocklow
+0000b2ec   lcd_printf
+0000b310   watchdog_init
+0000b334   semaphore_create
+0000b376   lcd_square
+0000b3d2   sem_trywait
+0000b3ee   timerB_init
+0000b408   i2c_out_bit
+0000b420   init_stack
+0000b438   Port_1_ISR
+0000b44e   __divu
+0000b44e   __remu
+0000b464   beep
+0000b478   lcd_backlight
+0000b48c   memset
+0000b4a0   __mpyi
+0000b4b4   timerA_init
+0000b4c8   L_LSR
+0000b4da   memcpy
+0000b4ec   func_epilog_7
+0000b4ee   func_epilog_6
+0000b4f0   func_epilog_5
+0000b4f2   func_epilog_4
+0000b4f4   func_epilog_3
+0000b4f6   func_epilog_2
+0000b4f8   func_epilog_1
+0000b4fc   charge
+0000b50a   imperial_march
+0000b518   strlen
+0000b526   rasberry
+0000b532   lcd_clear
+0000b53c   ADC10_ISR
+0000b544   blink
+0000b54c   pthread_yield
+0000b554   _system_pre_init
+0000b558   C$$EXIT
+0000b558   abort
+0000b55c   _nop
+0000b55e   __etext__
+0000b55e   etext
+0000b55e   king_snake_image
+0000c486   snake1_image
+0000cb08   snake_text_image
+0000cfa6   cs
+0000d186   imperial_march_notes
+0000d29e   dv3
+0000d3ee   Charge
+0000d42a   px_off
+0000d430   px_on
+0000d436   __cinit__
+0000d436   cinit
+0000ffe4   __TI_int02
+0000ffe6   __TI_int03
+0000ffea   __TI_int05
+0000ffec   __TI_int06
+0000ffee   __TI_int07
+0000fff0   __TI_int08
+0000fff2   __TI_int09
+0000fff4   __TI_int10
+0000fff8   __TI_int12
+0000fffa   __TI_int13
+0000fffc   __TI_int14
+0000fffe   _reset_vector
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   __pinit__
+ffffffff   binit
+ffffffff   pinit
+
+[335 symbols]
